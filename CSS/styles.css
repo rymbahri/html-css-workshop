@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.menu {
+  height: 45px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 7);
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 3s;
+}
+.menu ul {
+  list-style: none;
+}
+.menu ul li {
+  color: aliceblue;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  display: none;
+}
+ul li:hover {
+  color: lightskyblue;
+}
+input [type="checkbox"] {
+  display: none;
+}
+label {
+  position: fixed;
+  top: 0px;
+  left: 45%;
+  z-index: 3;
+  transition: 3s;
+}
+label > div {
+  height: 7px;
+  width: 45px;
+  background-color: aliceblue;
+  border-radius: 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: 3s;
+}
+#menu-buttom:checked ~ .menu {
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+  height: 100vh;
+}
+#menu-buttom:checked ~ .menu ul li {
+  display: block;
+}
+#menu-buttom:checked ~ label > .bottom {
+  transform: rotateZ(-45deg);
+  margin-top: -20px;
+}
+#menu-buttom:checked ~ label > .top {
+  transform: rotateZ(45deg);
+  margin-top: 18px;
+}
+
+#menu-buttom:checked ~ label > .middle {
+  opacity: 0;
+}
+#menu-buttom:checked ~label{
+    left: 90%;
+    top: 5px;
+}
